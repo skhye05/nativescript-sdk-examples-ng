@@ -8,7 +8,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const { NativeScriptWorkerPlugin } = require("nativescript-worker-loader/NativeScriptWorkerPlugin");
 
-const { AotPlugin } = require("@ngtools/webpack");
+const { AngularCompilerPlugin } = require("@ngtools/webpack");
 
 const ngToolsWebpackOptions = { tsConfigPath: "tsconfig.aot.json" };
 
@@ -173,7 +173,7 @@ function getPlugins(platform, env) {
             { from: "**/*.jpg" },
             { from: "**/*.png" },
             { from: "**/*.xml" },
-        ], { ignore: ["App_Resources/**"] }),
+        ]),
 
         // Generate a bundle starter script and activate it in package.json
         new nsWebpack.GenerateBundleStarterPlugin([
@@ -193,21 +193,26 @@ function getPlugins(platform, env) {
             statsFilename: join(__dirname, "report", `stats.json`),
         }),
 
-        // Angular AOT compiler
-        new AotPlugin(
+        // // Angular AOT compiler
+        new AngularCompilerPlugin(
             Object.assign({
                 entryModule: resolve(__dirname, "app/app.module#AppModule"),
                 typeChecking: false
             }, ngToolsWebpackOptions)
-        ),
+        )
+        // new AotPlugin(
+        //     Object.assign({
+        //         entryModule: resolve(__dirname, "app/app.module#AppModule"),
+        //         typeChecking: false
+        //     }, ngToolsWebpackOptions)
+        // ),
 
-        // Resolve .ios.css and .android.css component stylesheets, and .ios.html and .android component views
-        new nsWebpack.UrlResolvePlugin({
-            platform: platform,
-            resolveStylesUrls: true,
-            resolveTemplateUrl: true
-        }),
-
+        // // Resolve .ios.css and .android.css component stylesheets, and .ios.html and .android component views
+        // new nsWebpack.UrlResolvePlugin({
+        //     platform: platform,
+        //     resolveStylesUrls: true,
+        //     resolveTemplateUrl: true
+        // }),
     ];
 
     if (env.uglify) {

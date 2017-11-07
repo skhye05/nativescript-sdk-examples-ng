@@ -86,6 +86,12 @@
     "./app/platform/platform-examples.module.ts",
     "./app/routing/routing-examples.module.ts",
     "./node_modules/tns-platform-declarations/ios.d.ts",
-    "./node_modules/tns-platform-declarations/android.d.ts"
+    "./node_modules/tns-platform-declarations/android.d.ts",
+
+    "./app/vendor.ts",
+    "./app/main.aot.ts",
+    "./app/main.ts",
+    "./app/vendor-platform.android.ts",
+    "./app/vendor-platform.ios.ts"
   ]
 }
