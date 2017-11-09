@@ -8,7 +8,12 @@ require("@angular/forms");
 require("@angular/http");
 require("@angular/router");
 
-require("nativescript-angular/platform-static");
+if ((<any>global).skipCodeGeneration) {
+    require("nativescript-angular/platform");
+} else {
+    require("nativescript-angular/platform-static");
+}
+
 require("nativescript-angular/animations");
 require("nativescript-angular/router");
 require("nativescript-angular/forms");

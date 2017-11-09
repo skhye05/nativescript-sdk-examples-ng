@@ -14,6 +14,21 @@ import { ModalDialogService } from "nativescript-angular/modal-dialog";
 import { registerElement } from "nativescript-angular/element-registry";
 import { isIOS } from "platform";
 
+(<any>global).System = {
+    import(path) {
+        return new Promise((resolve, reject) => {
+            try {
+                resolve(global.require(path));
+            } catch(e) {
+                console.log("System.import failed to resolve: " + path);
+                reject(e);
+            }
+        });
+    }
+}
+
+import { SystemJsNgModuleLoader } from "@angular/core";
+
 declare var GMSServices: any;
 
 @NgModule({
@@ -31,7 +46,7 @@ declare var GMSServices: any;
     ],
     providers: [
         ModalDialogService,
-        { provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader }
+        SystemJsNgModuleLoader
     ]
 })
 // << ngmodule-config
