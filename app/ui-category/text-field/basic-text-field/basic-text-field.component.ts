@@ -6,7 +6,7 @@ import { Page } from "ui/page";
 import { setTimeout } from "timer";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     // >> (hide)
     styleUrls: ["./../text-field.style.css"],
     // << (hide)

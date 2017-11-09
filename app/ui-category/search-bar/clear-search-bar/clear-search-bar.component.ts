@@ -10,7 +10,7 @@ class DataItem {
 }
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./clear-search-bar.component.html",
     changeDetection: ChangeDetectionStrategy.OnPush
 })

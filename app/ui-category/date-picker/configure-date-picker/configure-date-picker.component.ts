@@ -4,7 +4,7 @@ import { DatePicker } from "ui/date-picker";
 import { EventData } from "data/observable";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./configure-date-picker.component.html"
 })
 export class ConfigureDatePickerComponent {

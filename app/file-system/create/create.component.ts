@@ -4,7 +4,7 @@ import { knownFolders, File, Folder } from "file-system";
 // << fs-create-import-code
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./create.component.html"
 })
 export class CreateExampleComponent {

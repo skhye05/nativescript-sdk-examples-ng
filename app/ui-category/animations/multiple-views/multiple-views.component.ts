@@ -9,7 +9,7 @@ let view3: View;
 let view4: View;
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./multiple-views.component.html",
     styleUrls: ["./../style.css"],
 })

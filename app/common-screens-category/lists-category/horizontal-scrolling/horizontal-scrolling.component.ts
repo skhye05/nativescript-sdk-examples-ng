@@ -5,7 +5,7 @@ import { ScrollView, ScrollEventData } from "ui/scroll-view";
 
 // >> ext-horizontal-lists-code
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./horizontal-scrolling.component.html",
     changeDetection: ChangeDetectionStrategy.OnPush
 })

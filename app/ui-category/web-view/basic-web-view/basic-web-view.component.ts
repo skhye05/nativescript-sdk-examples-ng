@@ -6,7 +6,7 @@ import { TextField } from "ui/text-field";
 import { Label } from "ui/label";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./basic-web-view.component.html",
     styleUrls: ["./style.css"]
 })

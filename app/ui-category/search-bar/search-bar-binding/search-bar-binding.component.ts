@@ -3,7 +3,7 @@ import { SearchBar } from "ui/search-bar";
 import { isAndroid } from "platform";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./search-bar-binding.component.html"
 })
 export class SearchBarBindingComponent {

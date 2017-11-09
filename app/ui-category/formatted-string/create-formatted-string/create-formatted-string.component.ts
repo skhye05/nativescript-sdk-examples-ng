@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./create-formatted-string.component.html"
 })
 export class CreateFormattedStringComponent {

@@ -2,7 +2,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./sub-route-one.component.html"
 })
 export class SubRouteOneComponent { }

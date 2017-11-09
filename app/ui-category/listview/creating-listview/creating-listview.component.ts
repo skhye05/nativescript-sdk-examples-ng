@@ -11,7 +11,7 @@ let europianCountries = ["Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", 
     "Slovenia", "Spain", "Sweden", "United Kingdom"];
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./creating-listview.component.html",
     changeDetection: ChangeDetectionStrategy.OnPush
 })

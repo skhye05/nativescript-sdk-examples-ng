@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { TextField } from "ui/text-field";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./text-field-binding.component.html",
     styleUrls: ["./../text-field.style.css"]
 })

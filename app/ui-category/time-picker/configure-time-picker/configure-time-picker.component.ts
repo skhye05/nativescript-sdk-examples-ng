@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { TimePicker } from "ui/time-picker";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./configure-time-picker.component.html"
 })
 export class ConfigureTimePickerComponent {

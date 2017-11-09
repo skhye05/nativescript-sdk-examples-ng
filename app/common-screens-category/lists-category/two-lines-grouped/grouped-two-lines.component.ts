@@ -6,7 +6,7 @@ import { mockedCounties } from "../mock-dataItems";
 
 // >> grouped-listview-two-lines-code
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./grouped-two-lines.component.html",
     changeDetection: ChangeDetectionStrategy.OnPush
 })

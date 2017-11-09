@@ -7,7 +7,7 @@ import { Label } from "ui/label";
 const URL = "https://docs.nativescript.org/img/cli-getting-started/angular/chapter0/NativeScript_logo.png";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     styleUrls: ["./creating-image.component.css"],
     templateUrl: "./creating-image.component.html"
 })

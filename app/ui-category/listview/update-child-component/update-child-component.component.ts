@@ -3,7 +3,7 @@ import { Component, ChangeDetectionStrategy, Input, OnChanges, SimpleChanges } f
 
 @Component({
     selector: "sdk-child-component",
-    moduleId: module.id,
+    moduleId: __filename,
     template: `
         <StackLayout orientation="horizontal">
             <Label text="This is item with ID: " class="m-16" textWrap="true"></Label>
@@ -22,7 +22,7 @@ export class ItemComponent implements OnChanges {
 
 @Component({
     styleUrls: ["./update-child-component.component.css"],
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./update-child-component.component.html"
 })
 export class UpdateChildComponent {

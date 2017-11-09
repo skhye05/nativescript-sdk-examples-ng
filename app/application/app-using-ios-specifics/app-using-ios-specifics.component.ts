@@ -3,7 +3,7 @@ import { android as androidApp, ios as iosApp } from "application";
 import { ios as iosUtils } from "utils/utils";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./app-using-ios-specifics.component.html"
 })
 export class AppUsingIosExampleComponent {

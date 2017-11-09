@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./flexbox-layout.component.html"
 })
 export class FlexboxLayoutSecondComponent {

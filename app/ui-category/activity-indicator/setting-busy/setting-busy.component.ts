@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { ActivityIndicator } from "ui/activity-indicator";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./setting-busy.component.html"
 })
 export class SettingBusyComponent {

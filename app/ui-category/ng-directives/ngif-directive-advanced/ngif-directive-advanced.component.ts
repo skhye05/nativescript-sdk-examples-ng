@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import * as application from "application";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./ngif-directive-advanced.component.html",
 })
 export class NgIfAdvancedComponent implements OnInit {

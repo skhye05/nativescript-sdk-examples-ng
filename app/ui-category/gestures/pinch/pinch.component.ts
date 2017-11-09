@@ -6,7 +6,7 @@ import { PinchGestureEventData } from "ui/gestures";
 let startScale = 1;
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./pinch.component.html"
 })
 export class PinchExampleComponent {

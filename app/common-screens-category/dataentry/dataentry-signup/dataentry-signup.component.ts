@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, OnInit, Input } from "@angular/core
 import { ObservableArray } from "data/observable-array";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./dataentry-signup.component.html",
     styleUrls: ["./style.css"],
     changeDetection: ChangeDetectionStrategy.OnPush

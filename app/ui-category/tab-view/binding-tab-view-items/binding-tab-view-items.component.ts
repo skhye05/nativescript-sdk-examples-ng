@@ -9,7 +9,7 @@ export class DataItem {
 }
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./binding-tab-view-items.component.html",
 })
 export class BindingTabViewItemsComponent {

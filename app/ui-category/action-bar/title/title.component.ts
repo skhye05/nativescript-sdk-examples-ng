@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./title.component.html"
 })
 export class TitleComponent {

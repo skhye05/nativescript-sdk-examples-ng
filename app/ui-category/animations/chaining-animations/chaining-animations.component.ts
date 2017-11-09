@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { View } from "ui/core/view";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./chaining-animations.component.html"
 })
 export class ChainingAnimationsComponent {

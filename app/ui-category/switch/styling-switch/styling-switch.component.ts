@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./styling-switch.component.html",
     styleUrls: ["./style.css"]
 })

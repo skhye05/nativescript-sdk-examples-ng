@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { action } from "ui/dialogs";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./action-dialog.component.html"
 })
 export class ActionDialogComponent {

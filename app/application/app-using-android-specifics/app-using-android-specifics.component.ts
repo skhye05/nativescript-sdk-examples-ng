@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { android as androidApp, ios as iosApp } from "application";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./app-using-android-specifics.component.html"
 })
 export class AppUsingAndroidExampleComponent {

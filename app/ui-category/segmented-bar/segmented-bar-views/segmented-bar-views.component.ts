@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { SegmentedBar, SegmentedBarItem } from "ui/segmented-bar";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     styleUrls: ["./style.css"],
     templateUrl: "./segmented-bar-views.component.html"
 })

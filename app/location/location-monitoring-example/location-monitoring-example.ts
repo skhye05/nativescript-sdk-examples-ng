@@ -6,7 +6,7 @@ import { SegmentedBarItem } from "ui/segmented-bar";
 import { Accuracy } from "ui/enums";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./location-monitoring-example.html"
 })
 export class LocationMonitoringExampleComponent {

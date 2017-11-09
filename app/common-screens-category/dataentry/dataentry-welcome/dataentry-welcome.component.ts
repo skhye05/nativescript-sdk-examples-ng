@@ -3,7 +3,7 @@ import { ObservableArray } from "data/observable-array";
 
 // >> dataentry-wellcome-login-code
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./dataentry-welcome.component.html",
     styleUrls: ["./style.css"],
     changeDetection: ChangeDetectionStrategy.OnPush

@@ -2,7 +2,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./ngswitch-directive.component.html",
 })
 export class NgSwitchComponent {

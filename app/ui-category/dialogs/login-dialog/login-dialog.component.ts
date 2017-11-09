@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { login, LoginResult } from "ui/dialogs";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./login-dialog.component.html"
 })
 export class LoginDialogComponent {

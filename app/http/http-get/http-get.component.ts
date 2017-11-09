@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { MyHttpGetService } from "./http-get.services";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./http-get.component.html",
     providers: [MyHttpGetService]
 })

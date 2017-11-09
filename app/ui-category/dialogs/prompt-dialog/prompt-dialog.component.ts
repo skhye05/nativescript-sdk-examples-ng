@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { prompt, PromptResult, inputType } from "ui/dialogs";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./prompt-dialog.component.html"
 })
 export class PromptDialogComponent {

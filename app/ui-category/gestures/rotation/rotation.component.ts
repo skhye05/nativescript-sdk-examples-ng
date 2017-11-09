@@ -4,7 +4,7 @@ import { GridLayout } from "ui/layouts/grid-layout";
 import { RotationGestureEventData } from "ui/gestures";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./rotation.component.html"
 })
 export class RotationExampleComponent {

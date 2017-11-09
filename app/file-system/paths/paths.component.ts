@@ -4,7 +4,7 @@ import * as fs from "file-system";
 // << fs-paths-import-code
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./paths.component.html"
 })
 export class PathsExampleComponent implements OnInit {

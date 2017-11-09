@@ -4,7 +4,7 @@ import { mockedDataArray, Country } from "../mock-dataItems";
 
 // >> ext-listview-basic-code
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./single-line-listview.component.html",
     changeDetection: ChangeDetectionStrategy.OnPush
 })

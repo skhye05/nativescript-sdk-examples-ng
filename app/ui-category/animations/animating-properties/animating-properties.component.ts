@@ -6,7 +6,7 @@ import { AbsoluteLayout } from "ui/layouts/absolute-layout";
 import * as enums from "ui/enums";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./animating-properties.component.html"
 })
 export class AnimatingPropertiesComponent {

@@ -3,7 +3,7 @@ import { fruits } from "./fruits";
 
 // >> ngfor-bind-items-code
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./ngfor-directive.component.html",
 })
 export class NgForComponent {

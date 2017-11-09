@@ -4,7 +4,7 @@ import { setTimeout } from "timer";
 import { ScrollEventData } from "ui/scroll-view";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     // >> (hide)
     styleUrls: ["./style.css"],
     // << (hide)

@@ -14,7 +14,7 @@ import {
 // << app-settings-code
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./values.component.html"
 })
 export class ValuesExampleComponent {

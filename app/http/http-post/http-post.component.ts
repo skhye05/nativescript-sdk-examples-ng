@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { MyHttpPostService } from "./http-post.services";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./http-post.component.html",
     providers: [MyHttpPostService]
 })

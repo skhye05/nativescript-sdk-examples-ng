@@ -7,7 +7,7 @@ export class DataItem {
 }
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     styleUrls: ["./using-async-pipe.component.css"],
     templateUrl: "./using-async-pipe.component.html",
     changeDetection: ChangeDetectionStrategy.OnPush,

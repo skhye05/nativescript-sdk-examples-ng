@@ -5,7 +5,7 @@ import * as fs from "file-system";
 // << fs-read-import-code
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./read.component.html"
 })
 export class ReadExampleComponent implements OnInit {

@@ -4,7 +4,7 @@ import { mockedCounties } from "../mock-dataItems";
 
 // >> multi-line-grouped-code
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./multi-line-grouped.component.html",
     changeDetection: ChangeDetectionStrategy.OnPush
 })

@@ -11,7 +11,7 @@ let menuLinks = [
 ];
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./../../examples-list.component.html",
     changeDetection: ChangeDetectionStrategy.OnPush
 })

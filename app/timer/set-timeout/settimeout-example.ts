@@ -5,7 +5,7 @@ import { setInterval, setTimeout, clearInterval } from "timer";
 import { Color } from "color";
 import { Button } from "ui/button";
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     styleUrls: ["./settimeout-example.css"],
     templateUrl: "./settimeout-example.html"
 })

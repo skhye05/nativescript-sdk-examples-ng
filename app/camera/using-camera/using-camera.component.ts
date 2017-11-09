@@ -6,7 +6,7 @@ import { takePicture, requestPermissions, isAvailable } from "nativescript-camer
 // << camera-module-init-code
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./using-camera.component.html"
 })
 export class UsingCameraExampleComponent {

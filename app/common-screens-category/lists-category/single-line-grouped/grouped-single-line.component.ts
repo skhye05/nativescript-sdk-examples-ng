@@ -4,7 +4,7 @@ import { mockedCounties } from "../mock-dataItems";
 
 // >> grouped-single-listview-basic-code
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./grouped-single-line.component.html",
     changeDetection: ChangeDetectionStrategy.OnPush
 })

@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { android as androidApp, ios as iosApp } from "application";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./app-checking-target.component.html"
 })
 export class AppCheckingTargetExampleComponent {

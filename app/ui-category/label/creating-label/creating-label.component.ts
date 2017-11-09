@@ -4,7 +4,7 @@ import { EventData } from "data/observable";
 import { Label } from "ui/label";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./creating-label.component.html"
 })
 export class CreatingLabelComponent {

@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./style-css-file.component.html",
     styleUrls: ["./style.css"]
 })

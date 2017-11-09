@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { Slider } from "ui/slider";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./basic-slider.component.html",
     styleUrls: ["./../style.css"]
 })

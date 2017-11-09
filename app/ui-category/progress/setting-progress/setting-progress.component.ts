@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { Progress } from "ui/progress";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./setting-progress.component.html",
 })
 export class SettingProgressComponent  {

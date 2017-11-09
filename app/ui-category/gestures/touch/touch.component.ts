@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { TouchGestureEventData } from "ui/gestures";
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./touch.component.html"
 })
 export class TouchExampleComponent {

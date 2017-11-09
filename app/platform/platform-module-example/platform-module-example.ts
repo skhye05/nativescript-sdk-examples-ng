@@ -27,7 +27,7 @@ class ScreenInfo {
 }
 
 @Component({
-    moduleId: module.id,
+    moduleId: __filename,
     templateUrl: "./platform-module-example.html"
 })
 export class PlatformModuleExampleComponent {
