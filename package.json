@@ -31,7 +31,6 @@
   "dependencies": {
     "@angular/animations": "~5.0.0",
     "@angular/common": "~5.0.0",
-    "@angular/compiler": "~5.0.0",
     "@angular/core": "~5.0.0",
     "@angular/forms": "~5.0.0",
     "@angular/http": "~5.0.0",
@@ -50,6 +49,7 @@
   },
   "devDependencies": {
     "@angular/compiler-cli": "~5.0.0",
+    "@angular/compiler": "~5.0.0",
     "@ngtools/webpack": "^1.8.0",
     "babel-traverse": "6.11.4",
     "babel-types": "6.11.1",

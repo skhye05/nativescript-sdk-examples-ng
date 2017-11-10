@@ -9,6 +9,41 @@ const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const { NativeScriptWorkerPlugin } = require("nativescript-worker-loader/NativeScriptWorkerPlugin");
 const { AngularCompilerPlugin } = require("@ngtools/webpack");
 
+const path = require("path");
+
+class NativeScriptAngularCompilerPlugin extends AngularCompilerPlugin {
+    constructor(options) {
+        super(options);
+
+        // TODO: This should be able to call webpack for a module and resolve to a file?
+        // https://github.com/angular/angular/blob/7bfeac746e717d02e062fe4a65c008060b8b662c/packages/compiler-cli/src/transformers/api.ts
+        const resourceNameToFileName = this._compilerHost.resourceNameToFileName || function(file, relativeTo) {
+            const resolved = path.resolve(path.dirname(relativeTo), file);
+            if (this.fileExists(resolved)) {
+                return resolved;
+            } else {
+                return null;
+            }
+        };
+        this._compilerHost.resourceNameToFileName = function(file, relativeTo) {
+            try {
+                const parsed= path.parse(file);
+                const platformFile = parsed.name + ".android" + parsed.ext;
+                let resolved;
+                try {
+                    resolved = resourceNameToFileName.call(this, platformFile, relativeTo);
+                } catch(e) {
+                }
+                resolved = resolved || resourceNameToFileName.call(this, file, relativeTo);
+                console.log(`resourceNameToFileName(${file}, ${relativeTo}): ${resolved}`);
+                return resolved;
+            } catch(e) {
+                console.log("Erro: " + e);
+            }
+        };
+    }
+}
+
 const mainSheet = `app.css`;
 
 module.exports = env => {
@@ -48,6 +83,7 @@ module.exports = env => {
         },
         resolve: {
             extensions: [ ".ts", ".js", ".css" ],
+
             plugins: [
                 new nsWebpack.PlatformSuffixPlugin(platform, platforms)
             ],
@@ -141,13 +177,7 @@ module.exports = env => {
             // Compile TypeScript files with ahead-of-time compiler.
             {
                 test: /.ts$/,
-                use: [
-                    { loader: "nativescript-dev-webpack/tns-aot-loader" },
-                    {
-                        loader: "@ngtools/webpack",
-                        options: ngToolsWebpackOptions,
-                    },
-                ]
+                loader: "@ngtools/webpack"
             },
 
         ];
@@ -196,14 +226,36 @@ module.exports = env => {
                 statsFilename: join(__dirname, "report", `stats.json`),
             }),
 
-            // // Angular AOT compiler
-            new AngularCompilerPlugin(
+            new NativeScriptAngularCompilerPlugin(
                 Object.assign({
                     entryModule: resolve(__dirname, "app/app.module#AppModule"),
                     typeChecking: false,
-                    skipCodeGeneration
+                    noResolve: true,
+                    skipCodeGeneration,
+                    // hostReplacementPaths: {
+                    //     [resolve("app/examples-list.component.css")]: resolve("app/examples-list.component.android.css"),
+                    //     [resolve("app/vendor-platform.ts")]: resolve("app/vendor-platform.android.ts"),
+                    // }
                 }, ngToolsWebpackOptions)
-            ),
+            )
+
+            // // // Angular AOT compiler
+            // new AngularCompilerPlugin(
+            //     Object.assign({
+            //         entryModule: resolve(__dirname, "app/app.module#AppModule"),
+            //         typeChecking: false,
+            //         noResolve: true,
+            //         skipCodeGeneration,
+            //         // hostReplacementPaths: {
+            //         //     [resolve("app/examples-list.component.css")]: resolve("app/examples-list.component.android.css"),
+            //         //     [resolve("app/vendor-platform.ts")]: resolve("app/vendor-platform.android.ts"),
+            //         // }
+            //     }, ngToolsWebpackOptions)
+            // ),
+
+            // new nsWebpack.PlatformFSPlugin({
+            //     platform, platforms, ignore: ["App_Resources"]
+            // })
 
             // // Resolve .ios.css and .android.css component stylesheets, and .ios.html and .android component views
             // new nsWebpack.UrlResolvePlugin({
