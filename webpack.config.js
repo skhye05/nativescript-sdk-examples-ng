@@ -26,21 +26,26 @@ class NativeScriptAngularCompilerPlugin extends AngularCompilerPlugin {
             }
         };
         this._compilerHost.resourceNameToFileName = function(file, relativeTo) {
+            const parsed= path.parse(file);
+            const platformFile = parsed.name + ".android" + parsed.ext;
+            let resolved;
             try {
-                const parsed= path.parse(file);
-                const platformFile = parsed.name + ".android" + parsed.ext;
-                let resolved;
-                try {
-                    resolved = resourceNameToFileName.call(this, platformFile, relativeTo);
-                } catch(e) {
-                }
-                resolved = resolved || resourceNameToFileName.call(this, file, relativeTo);
-                console.log(`resourceNameToFileName(${file}, ${relativeTo}): ${resolved}`);
-                return resolved;
+                resolved = resourceNameToFileName.call(this, platformFile, relativeTo);
             } catch(e) {
-                console.log("Erro: " + e);
             }
+            resolved = resolved || resourceNameToFileName.call(this, file, relativeTo);
+            return resolved;
         };
+    }
+
+    apply(compiler) {
+        super.apply(compiler);
+
+        compiler.plugin('environment', () => {
+            console.log("compiler.plugin(environment), inputFileSystem: " + compiler.inputFileSystem);
+            // compiler.inputFileSystem = new virtual_file_system_decorator_1.VirtualFileSystemDecorator(compiler.inputFileSystem, this._compilerHost);
+            // compiler.watchFileSystem = new virtual_file_system_decorator_1.VirtualWatchFileSystemDecorator(compiler.inputFileSystem);
+        });
     }
 }
 
